@@ -1,6 +1,6 @@
 parameters:
-  ssh_key_name: lars_redhat
-  server_image: fedora-21
+  ssh_key_name: diga_magnum 
+  server_image: coreos
   server_flavor: m1.medium
   external_network_id: 59bcbd61-f5ed-4c77-8b60-b7a004ed40b3
   dns_nameserver: 10.16.36.29
