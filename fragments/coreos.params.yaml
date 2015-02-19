@@ -1,0 +1,14 @@
+#cloud-config 
+coreos:
+  etcd:
+    discovery: https://discovery.etcd.io/846790c399f72327af95d2d85c8a3efe
+    addr: $private_ipv4:4001
+    peer-addr: $private_ipv4:7001
+  units:
+    - name: etcd.service
+      command: start
+    - name: fleet.service
+      command: start
+  ssh_authorized_keys:
+    - testkey
+  hostname: coreos-04 

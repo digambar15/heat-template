@@ -135,6 +135,12 @@ resources:
       group: ungrouped
       config: {get_file: fragments/docker.service.yaml}
 
+  coreos_params:
+    type: "OS::Heat::SoftwareConfig"
+    properties:
+      group: ungrouped
+      config: {get_file: fragments/coreos.params.yaml}
+
   enable_services:
     type: "OS::Heat::SoftwareConfig"
     properties:
@@ -167,6 +173,7 @@ resources:
         - config: {get_resource: docker_service}
         - config: {get_resource: enable_services}
         - config: {get_resource: cfn_signal}
+        - config: {get_resource: coreos_params}
 
   kube_node:
     type: "OS::Nova::Server"
