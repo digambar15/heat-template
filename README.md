@@ -19,6 +19,17 @@ pods deployed on different minions.
 
 These templates will work with the Juno version of Heat.
 
+Add coreos image in glance - 
+
+$ wget http://alpha.release.core-os.net/amd64-usr/current/coreos_production_openstack_image.img.bz2
+$ bunzip2 coreos_production_openstack_image.img.bz2
+$ glance image-create --name core-os \
+  --container-format bare \
+  --disk-format qcow2 \
+  --file coreos_production_openstack_image.img \
+  --is-public True
+
+
 ### Guest image
 
 These templates will work with either CentOS Atomic Host or Fedora 21
